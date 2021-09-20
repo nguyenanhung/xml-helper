@@ -1,0 +1,35 @@
+{
+    "type": "library",
+    "name": "nguyenanhung/xml-helper",
+    "description": "Basic and Advanced XML Helper",
+    "keywords": [
+        "helper",
+        "json",
+        "php"
+    ],
+    "homepage": "https://github.com/nguyenanhung/xml-helper",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Nguyen An Hung",
+            "email": "dev@nguyenanhung.com",
+            "homepage": "https://nguyenanhung.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "laminas/laminas-xml": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "nguyenanhung\\Libraries\\XML\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    }
+}
