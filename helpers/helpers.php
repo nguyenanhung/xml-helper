@@ -16,7 +16,7 @@ if (!function_exists('xml_convert')) {
      *
      * @return    string
      */
-    function xml_convert($str, $protect_all = false)
+    function xml_convert($str, $protect_all = false): string
     {
         $temp = '__TEMP_AMPERSANDS__';
 
@@ -53,7 +53,7 @@ if (!function_exists('xmlConvert')) {
      *
      * @return    string
      */
-    function xmlConvert($str, $protect_all = false)
+    function xmlConvert($str, $protect_all = false): string
     {
         return xml_convert($str, $protect_all);
     }
@@ -73,7 +73,7 @@ if (!function_exists('parse_sitemap')) {
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/21/2021 13:07
      */
-    function parse_sitemap($domain = '', $loc = '', $lastmod = '', $type = 'property', $newline = "\n")
+    function parse_sitemap(string $domain = '', $loc = '', string $lastmod = '', string $type = 'property', string $newline = "\n"): string
     {
         // Since we allow the data to be passes as a string, a simple array
         // or a multidimensional one, we need to do a little prepping.
@@ -95,9 +95,9 @@ if (!function_exists('parse_sitemap')) {
         $str = '';
         foreach ($loc as $meta) {
             $type    = 'loc';
-            $loc     = isset($meta['loc']) ? $meta['loc'] : '';
-            $lastmod = isset($meta['lastmod']) ? $meta['lastmod'] : '';
-            $newline = isset($meta['newline']) ? $meta['newline'] : "\n";
+            $loc     = $meta['loc'] ?? '';
+            $lastmod = $meta['lastmod'] ?? '';
+            $newline = $meta['newline'] ?? "\n";
             $str     .= "\n<sitemap>\n";
             $str     .= '<' . $type . '>' . trim($domain) . trim($loc) . '.xml' . '</loc>';
             $str     .= "\n<lastmod>" . $lastmod . "</lastmod>";
@@ -123,7 +123,7 @@ if (!function_exists('parseSitemap')) {
      * @copyright: 713uk13m <dev@nguyenanhung.com>
      * @time     : 09/21/2021 12:52
      */
-    function parseSitemap($domain = '', $loc = '', $lastmod = '', $type = 'property', $newline = "\n")
+    function parseSitemap(string $domain = '', $loc = '', string $lastmod = '', string $type = 'property', string $newline = "\n"): string
     {
         return parse_sitemap($domain, $loc, $lastmod, $type, $newline);
     }
