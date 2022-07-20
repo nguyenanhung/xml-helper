@@ -62,7 +62,7 @@ if (!function_exists('parse_sitemap')) {
     /**
      * Function parse_sitemap
      *
-     * @param string       $domain
+     * @param string|array $domain
      * @param string|array $loc
      * @param string       $lastmod
      * @param string       $type
